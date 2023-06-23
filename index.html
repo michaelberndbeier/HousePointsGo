@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="3599" />
+    <style>
+
+    </style>
+    <title>Hauspunkte!!</title>
+</head>
+<body>
+
+<h1> {{ .Gryffindor.HouseName }} </h1>
+<h2> {{ .Gryffindor.PointsSum }} </h1>
+
+<h1> {{ .Slytherin.HouseName }} </h1>
+<h2> {{ .Slytherin.PointsSum }} </h1>
+    <div class="EventsList" >
+        {{ range .Slytherin.Events }}
+        <div class="Event">
+            <div class="EventPoints">
+                {{ .NumOfPoints }}
+            </div>
+            <div class="EventFrom">
+               {{ .FromName }}
+            </div>
+            <div class="Why">
+               {{ .Why }}
+            </div>
+            <div class="EventWhen">
+               {{ .When }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+    <h1> {{ .Hufflepuff.HouseName }} </h1>
+    <h2> {{ .Hufflepuff.PointsSum }} </h1>
+
+        <h1> {{ .Ravenclaw.HouseName }} </h1>
+        <h2> {{ .Ravenclaw.PointsSum }} </h1>
+</body>
