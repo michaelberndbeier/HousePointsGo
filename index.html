@@ -4,38 +4,139 @@
     <meta http-equiv="refresh" content="3599" />
     <style>
 
+        .EventsList {
+            flex: fit-content;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            margin-left: 10%;
+            margin-right: 10%;
+            align-content: center;
+        }
+
+
+        .HouseFlexOuter {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 5%;
+        }
+
+        .HouseFlex {
+            flex: 1 0 21%;
+            margin: 5px;
+            height: 300px;
+            background: lightgray;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            opacity: 0.9;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        .Event {
+            font-size: small;
+        }
+
+        .EventPoints {
+            font-size: medium;
+        }
+
+        .EventFrom {
+            font-family: Serif;
+            font-style: italic;
+        }
+
     </style>
     <title>Hauspunkte!!</title>
 </head>
 <body>
-
-<h1> {{ .Gryffindor.HouseName }} </h1>
-<h2> {{ .Gryffindor.PointsSum }} </h1>
-
-<h1> {{ .Slytherin.HouseName }} </h1>
-<h2> {{ .Slytherin.PointsSum }} </h1>
-    <div class="EventsList" >
-        {{ range .Slytherin.Events }}
-        <div class="Event">
-            <div class="EventPoints">
-                {{ .NumOfPoints }}
+<div class="HouseFlexOuter" >
+    <div class="HouseFlex">
+        <h1> {{ .Gryffindor.HouseName }} </h1>
+        <h2> {{ .Gryffindor.PointsSum }} </h1>
+            <div class="EventsList" >
+                {{ range .Gryffindor.Events }}
+                <div class="Event">
+                    <div class="EventPoints">
+                        {{ .NumOfPoints }}
+                    </div>
+                    <div class="EventFrom">
+                        {{ .FromName }}
+                    </div>
+                    <div class="Why">
+                        {{ .Why }}
+                    </div>
+                    <div class="EventWhen">
+                        {{ .When }}
+                    </div>
+                </div>
+                {{ end }}
             </div>
-            <div class="EventFrom">
-               {{ .FromName }}
-            </div>
-            <div class="Why">
-               {{ .Why }}
-            </div>
-            <div class="EventWhen">
-               {{ .When }}
-            </div>
-        </div>
-        {{ end }}
     </div>
-
-    <h1> {{ .Hufflepuff.HouseName }} </h1>
-    <h2> {{ .Hufflepuff.PointsSum }} </h1>
-
+    <div class="HouseFlex">
+        <h1> {{ .Slytherin.HouseName }} </h1>
+        <h2> {{ .Slytherin.PointsSum }} </h1>
+            <div class="EventsList" >
+                {{ range .Slytherin.Events }}
+                <div class="Event">
+                    <div class="EventPoints">
+                        {{ .NumOfPoints }}
+                    </div>
+                    <div class="EventFrom">
+                        {{ .FromName }}
+                    </div>
+                    <div class="Why">
+                        {{ .Why }}
+                    </div>
+                    <div class="EventWhen">
+                        {{ .When }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+    </div>
+    <div class="HouseFlex">
+        <h1> {{ .Hufflepuff.HouseName }} </h1>
+        <h2> {{ .Hufflepuff.PointsSum }} </h1>
+            <div class="EventsList" >
+                {{ range .Hufflepuff.Events }}
+                <div class="Event">
+                    <div class="EventPoints">
+                        {{ .NumOfPoints }}
+                    </div>
+                    <div class="EventFrom">
+                        {{ .FromName }}
+                    </div>
+                    <div class="Why">
+                        {{ .Why }}
+                    </div>
+                    <div class="EventWhen">
+                        {{ .When }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+    </div>
+    <div class="HouseFlex" >
         <h1> {{ .Ravenclaw.HouseName }} </h1>
         <h2> {{ .Ravenclaw.PointsSum }} </h1>
+            <div class="EventsList" >
+                {{ range .Ravenclaw.Events }}
+                <div class="Event">
+                    <div class="EventPoints">
+                        {{ .NumOfPoints }}
+                    </div>
+                    <div class="EventFrom">
+                        {{ .FromName }}
+                    </div>
+                    <div class="Why">
+                        {{ .Why }}
+                    </div>
+                    <div class="EventWhen">
+                        {{ .When }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+    </div>
+</div>
 </body>

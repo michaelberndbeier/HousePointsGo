@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send House Points</title>
+</head>
+<body>
+<!-- forms.html -->
+{{if .Success}}
+<h1>Thanks for your message!</h1>
+{{else}}
+<h1>Contact</h1>
+<form method="POST">
+  <label>From:</label><br />
+  <fieldset>
+    <input type="radio" id="0" name="from" value="0">
+    <label for="1">Gryffindor</label>
+    <input type="radio" id="1" name="from" value="1">
+    <label for="1">Slytherin</label>
+    <input type="radio" id="2" name="from" value="2">
+    <label for="2">Ravenclaw</label>
+    <input type="radio" id="3" name="from" value="3">
+    <label for="3">Hufflepuff</label>
+  </fieldset>
+  <label>To:</label><br />
+  <fieldset>
+    <input type="radio" id="0" name="to" value="0">
+    <label for="1">Gryffindor</label>
+    <input type="radio" id="1" name="to" value="1">
+    <label for="1">Slytherin</label>
+    <input type="radio" id="2" name="to" value="2">
+    <label for="2">Ravenclaw</label>
+    <input type="radio" id="3" name="to" value="3">
+    <label for="3">Hufflepuff</label>
+  </fieldset>
+
+  <label>Why:</label><br />
+  <textarea name="why"></textarea><br />
+  <label>Points:</label><br />
+  <textarea name="numOfPoints"></textarea><br />
+  <input type="submit">
+</form>
+{{end}}
+</body>
+</html>
